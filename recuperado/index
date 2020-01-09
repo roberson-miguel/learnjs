@@ -1,0 +1,23 @@
+<html>
+    <head>
+        <title>Curso JavaScript</title>
+    </head>
+    <body>
+        <script>
+            // AND &&, OR || , NOT !==
+
+            var sexo = 'F', idade = 23;
+
+            // if (sexo === 'M' || idade >= 18) {
+            //    console.log('OK');
+            // }
+
+
+            if (sexo !== 'M') {
+              console.log('OK');
+            }
+           
+              
+        </script>   
+    </body>
+</html>
