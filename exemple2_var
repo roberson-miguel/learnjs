@@ -1,0 +1,18 @@
+<html>
+    <head>
+        <title>Curso JavaScript</title>
+    </head>
+    <body>
+        <script>
+            var x = 10;
+            var y = 5;
+
+            // ou poderia declarar assim: var x = 10, y = 5;
+            // note que após a primeira variavel separamos usando virgula, e não ponto e virgula!
+
+            var resultado = x + y;
+            console.log(resultado);
+   
+        </script>   
+    </body>
+</html>
