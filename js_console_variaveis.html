@@ -1,8 +1,14 @@
 <html>
     <head>
-        <title>Curso JavaScript</title>
+        <title>Variaveis e Console</title>
     </head>
     <body>
+        <div id="alunoBody">
+
+        </div>
+        <div id="todosBody">
+
+        </div>
         <script>
            var nome = "Roberson Miguel";
            var idade = 40;
@@ -17,12 +23,17 @@
                idade: 40,
                peso: 80.5,
                humano: true
-
            };
+
+           alunoBody.innerHTML = "Nome do Aluno:" + aluno.nome + " - Idade: " + aluno.idade ;
+           todosBody.innerHTML = "Todos Alunos: " + alunos ;
 
            // visualizar o console
            
            console.log(alunos);
+           
+           console.log(aluno.nome)
+           console.log(aluno.idade)
 
         </script>
     </body>
