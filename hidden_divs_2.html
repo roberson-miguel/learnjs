@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hidden Divs with Datalist</title>
+</head>
+<body>
+
+  <select name="name" id="cboOptions" onchange="showDiv('div',this)" class="form-control" >
+    <option value="1">YES</option>
+    <option value="2">NO</option>
+</select>
+
+<div id="div1" style="display:block;">
+    <input type="text" id="customerName" class="form-control" placeholder="Type Customer Name...">
+    <input type="text" style="margin-top: 3px;" id="customerAddress" class="form-control" placeholder="Type Customer Address...">
+    <input type="text" style="margin-top: 3px;" id="customerMobile" class="form-control" placeholder="Type Customer Mobile...">
+</div>
+<div id="div2" style="display:none;">
+    <input type="text" list="cars" id="customerID" class="form-control" placeholder="Type Customer Name...">
+    <datalist id="cars">
+        <option>Value 1</option>
+        <option>Value 2</option>
+        <option>Value 3</option>
+        <option>Value 4</option>
+    </datalist>
+</div>
+
+
+<script>
+  function showDiv(prefix,chooser) 
+  {
+          for(var i=0;i<chooser.options.length;i++) 
+          {
+              var div = document.getElementById(prefix+chooser.options[i].value);
+              div.style.display = 'none';
+          }
+
+          var selectedOption = (chooser.options[chooser.selectedIndex].value);
+
+          if(selectedOption == "1")
+          {
+              displayDiv(prefix,"1");
+          }
+          if(selectedOption == "2")
+          {
+              displayDiv(prefix,"2");
+          }
+  }
+
+  function displayDiv(prefix,suffix) 
+  {
+          var div = document.getElementById(prefix+suffix);
+          div.style.display = 'block';
+  }
+</script>
+  
+</body>
+</html>
