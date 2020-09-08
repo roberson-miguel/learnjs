@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Finding HTML elements by query selector</title>
+</head>
+<body>
+  <p class="topo">Bio's Bug Informatica.</p>
+  <p class="topo">Ta na Obra</p>
+  <p class="topo">Chama o Bios</p>
+  <p class="topo">BR Boats</p>
+
+  <p id="p1"></p>
+  <p id="p2"></p>
+
+  <script>
+    var x = document.querySelectorAll("p.topo");
+    
+    document.getElementById("p1").innerHTML = 
+    'O nome da Empresa (index 0) com a class:"topo" é : ' + x[0].innerHTML;
+    document.getElementById("p2").innerHTML = 
+    'O nome da Empresa (index 3) com a class:"topo" é : ' + x[3].innerHTML;
+  </script>
+  
+</body>
+</html>
