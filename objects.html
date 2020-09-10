@@ -4,33 +4,48 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
+  <script src="node_modules/moment/moment.js"></script>
+  
 </head>
 <body>
   
   <script>
-
-    const datas_reserva = [];
-      datas_reserva[0] = window.prompt("Digite Primeiro dia:")
-      datas_reserva[1] = window.prompt("Digite Segundo dia:")
-      datas_reserva[2] = window.prompt("Digite Terceiro dia:")
-
-    const tipo_cliente = window.confirm("Voce é cliente Fidelidade?")
-
-      //datas_reserva.push("27/09/2020") // usar para teste automático
+    const tipo_cliente = window.confirm("Cliente Fidelidade?")
+    const dataInicial = window.prompt("Digite data Inicial:")
+    const dataFinal = window.prompt("Digite data Final:")
 
     class Reserva{
-      constructor(cliente, data1, data2, data3){
-        this.cliente = cliente
-        this.data1 = datas_reserva[0]
-        this.data2 = datas_reserva[1]
-        this.data3 = datas_reserva[2]
+      constructor(fidelidade, data_entrada, data_saida){
+        this.fidelidade = tipo_cliente
+        this.data_entrada = moment(dataInicial).format("L")  
+        this.data_saida = moment(dataFinal).format("L")  
       }
     };
-    
-    const pedido = new Reserva("regular", "25/09/2020", "26/09/2020", "27/09/2020")
 
-    console.log(pedido);
-    
+    const pedido1 = new Reserva()
+
+    class Hotel{
+      constructor(nome, classe, preco_semana_regular, preco_semana_fidelidade, preco_fds_regular, preco_fds_fidelidade){
+        this.nome = nome
+        this.classe = classe
+        this.preco_semana_regular = preco_semana_regular
+        this.preco_semana_fidelidade = preco_semana_fidelidade
+        this.preco_fds_regular = preco_fds_regular
+        this.preco_fds_fidelidade = preco_fds_fidelidade
+      }
+    };
+      
+    const hotel1 = new Hotel("Parque das flores", 3, 110, 80, 90, 80)
+    const hotel2 = new Hotel("Jardim Botânico", 4, 160, 110, 60, 50)
+    const hotel3 = new Hotel("Mar Atlântico", 5, 220, 100, 150, 40)
+
+
+    console.log(pedido1);
+    console.log(hotel1);
+    console.log(hotel2);
+    console.log(hotel3);
+   
+        
   </script>
 
 </body>
