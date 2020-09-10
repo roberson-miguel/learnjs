@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+  <script>
+
+    const datas_reserva = [];
+      datas_reserva[0] = window.prompt("Digite Primeiro dia:")
+      datas_reserva[1] = window.prompt("Digite Segundo dia:")
+      datas_reserva[2] = window.prompt("Digite Terceiro dia:")
+
+    const tipo_cliente = window.confirm("Voce é cliente Fidelidade?")
+
+      //datas_reserva.push("27/09/2020") // usar para teste automático
+
+    class Reserva{
+      constructor(cliente, data1, data2, data3){
+        this.cliente = cliente
+        this.data1 = datas_reserva[0]
+        this.data2 = datas_reserva[1]
+        this.data3 = datas_reserva[2]
+      }
+    };
+    
+    const pedido = new Reserva("regular", "25/09/2020", "26/09/2020", "27/09/2020")
+
+    console.log(pedido);
+    
+  </script>
+
+</body>
+</html>
+
