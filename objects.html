@@ -44,7 +44,18 @@
     console.log(hotel1);
     console.log(hotel2);
     console.log(hotel3);
+
+
+    // inicia a semana na segunda com 1 e vai até domingo com 7
+    // os dois formatos tem o mesmo resultado
+    const week = moment(dataInicial).isoWeekday(); 
+    const week1 = moment(dataInicial).weekday();
+    console.log(week);
+    console.log(week1);
    
+    //contagem de dias
+    const dias = moment(dataInicial).startOf('dia').fromNow(dataFinal);
+    console.log(dias);
         
   </script>
 
