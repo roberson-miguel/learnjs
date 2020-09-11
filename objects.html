@@ -59,36 +59,43 @@
 
     //separar quantos dias na semana ou fds
 
-      //contagem de dias
-      //const duration = moment.duration(pedido1.data_entrada.diff(pedido1.data_saida))
-      //console.log(duration);
-
+    
+    
+    
       // inicia a semana na segunda com 1 e vai até domingo com 7
       // os dois formatos tem o mesmo resultado
       const week = moment(dataInicial).isoWeekday(); 
-      //console.log(week1);
-      //const week = moment(dataInicial).weekday();
       console.log(week);
+
+
+      //contagem de dias
+      var a = moment(pedido1.data_entrada);//now
+      var b = moment(pedido1.data_saida);
+      //console.log(b.diff(a, 'd')) // 31
+      const dias = moment(pedido1.data_saida).diff(pedido1.data_entrada, 'd'); // 31
+      console.log(dias);
+      
+      
    
     
-    // Criar função pegar tipo de cliente e encontrar menor preço
+    // Criar função pegar tipo de cliente e multiplica dias por preço
 
     function retornaHotel(pedido1, hoteis_semana_regular, hoteis_semana_fidelidade, 
-                          hoteis_fds_regular, hoteis_fds_fidelidade) {
+                          hoteis_fds_regular, hoteis_fds_fidelidade, dias) {
 
                
               
                 if (pedido1.cliente === 'Regular'){
-                    return console.log("Preço Regular semana " + hoteis_semana_regular);
+                    return console.log("Preço Regular semana " + hoteis_semana_regular[0] * dias);
                 } else if(pedido1.cliente === 'Fidelidade'){
                     return console.log("Preço Fidelidade semana " + hoteis_semana_fidelidade);
                 } else {
-                    return console.log("Regular ou Fidelidade");;
+                    return console.log("Regular ou Fidelidade ");
                 }
             };
 
       retornaHotel(pedido1, hoteis_semana_regular, hoteis_semana_fidelidade, 
-                              hoteis_fds_regular, hoteis_fds_fidelidade);
+                              hoteis_fds_regular, hoteis_fds_fidelidade, dias);
         
   </script>
 
