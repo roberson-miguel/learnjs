@@ -5,22 +5,22 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
   <script src="node_modules/moment/moment.js"></script>
-
   
 </head>
 <body>
   
   <script>
     // para TRUE const tipo_cliente = window.confirm("Cliente Fidelidade?")
-    const tipo_cliente = window.prompt('Digite "Regular" ou "Fidelidade":')
-    const dataInicial = window.prompt("Digite data Inicial:")
-    const dataFinal = window.prompt("Digite data Final:")
+    //const tipo_cliente = window.prompt('Digite "Regular" ou "Fidelidade":')
+    //const dataInicial = window.prompt("Digite data Inicial:")
+    //const dataFinal = window.prompt("Digite data Final:")
 
     class Reserva{
       constructor(cliente, data_entrada, data_saida){
-        this.cliente = tipo_cliente
-        this.data_entrada = moment(dataInicial).format("L")  
-        this.data_saida = moment(dataFinal).format("L")  
+        //this.cliente = tipo_cliente
+        this.cliente = "Regular"
+        this.data_entrada = moment("2020-09-20").format("l")  
+        this.data_saida = moment("2020-09-30").format("l")  
       }
     };
 
@@ -64,8 +64,8 @@
     
       // inicia a semana na segunda com 1 e vai até domingo com 7
       // os dois formatos tem o mesmo resultado
-      const week = moment(dataInicial).isoWeekday(); 
-      console.log(week);
+      const weeks = moment("2020-09-20").isoWeekday(); 
+      console.log(weeks);
 
 
       //contagem de dias
@@ -96,7 +96,6 @@
 
       retornaHotel(pedido1, hoteis_semana_regular, hoteis_semana_fidelidade, 
                               hoteis_fds_regular, hoteis_fds_fidelidade, dias);
-        
   </script>
 
 </body>
